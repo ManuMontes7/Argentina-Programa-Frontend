@@ -6,11 +6,12 @@ import { EncabezadoComponent } from './components/encabezado/encabezado.componen
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaEducacionComponent } from './components/experiencia-educacion/experiencia-educacion.component';
 import { AptitudesComponent } from './components/aptitudes/aptitudes.component';
-import { PortfolioService } from './servicios/portfolio.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AptitudesComponent,
     ProyectosComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
