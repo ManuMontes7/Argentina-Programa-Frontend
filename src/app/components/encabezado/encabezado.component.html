@@ -7,7 +7,8 @@
         <a href="https://www.instagram.com/"> <img src="../../../assets/instagram.png" id="instagram"> </a>
         <a href="https://ar.linkedin.com/"> <img src="../../../assets/linkedin.png" id="linkedin"> </a>
         <a href="https://twitter.com/home"> <img src="../../../assets/twitter.png" id="twitter"> </a>
-        <a href="/login"><button type="button" class="btn btn-outline-light">Ingresar</button></a>
+        <a href="/login"><button type="button" class="btn btn-outline-light" *ngIf="!isLogged">Ingresar</button></a>
+        <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</button>
     </div>
 
     <div id="banner">
