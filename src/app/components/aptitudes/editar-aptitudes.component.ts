@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Aptitudes } from 'src/app/model/aptitudes';
-import { AptitudesService } from 'src/app/service/aptitudes.service';
+import { Aptitudes } from '../../model/aptitudes';
+import { AptitudesService } from '../../service/aptitudes.service';
 
 @Component({
   selector: 'app-editar-aptitudes',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Educacion } from 'src/app/model/educacion';
-import { EducacionService } from 'src/app/service/educacion.service';
+import { Educacion } from '../../model/educacion';
+import { EducacionService } from '../../service/educacion.service';
 
 @Component({
   selector: 'app-nueva-educacion',

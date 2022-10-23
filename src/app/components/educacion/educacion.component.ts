@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Educacion } from 'src/app/model/educacion';
-import { EducacionService } from 'src/app/service/educacion.service';
-import { TokenService } from 'src/app/service/token.service';
+import { Educacion } from '../../model/educacion';
+import { EducacionService } from '../../service/educacion.service';
+import { TokenService } from '../../service/token.service';
 
 @Component({
   selector: 'app-educacion',

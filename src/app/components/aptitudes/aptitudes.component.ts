@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Aptitudes } from 'src/app/model/aptitudes';
-import { AptitudesService } from 'src/app/service/aptitudes.service';
-import { TokenService } from 'src/app/service/token.service';
+import { Aptitudes } from '../../model/aptitudes';
+import { AptitudesService } from '../../service/aptitudes.service';
+import { TokenService } from '../../service/token.service';
 
 @Component({
   selector: 'app-aptitudes',
