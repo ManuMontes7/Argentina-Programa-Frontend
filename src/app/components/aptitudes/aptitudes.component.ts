@@ -34,12 +34,12 @@ export class AptitudesComponent implements OnInit {
 
   delete(id: number) {
     if (id != undefined) {
-      this.aptitudes.delete(id).subscribe(
+      this.aptitudS.delete(id).subscribe(
         (data) => {
           this.cargarAptitudes();
         },
         (err) => {
-          alert('No se pudo borrar la skill');
+          alert('No se pudo borrar la Aptitud');
         }
       );
     }

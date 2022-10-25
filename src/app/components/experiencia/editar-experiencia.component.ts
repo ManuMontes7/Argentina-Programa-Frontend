@@ -12,14 +12,14 @@ export class EditarExperienciaComponent implements OnInit {
   expLab: Experiencia = null;
 
   constructor(
-    private Experiencia: ExperienciaService,
+    private experienciaService: ExperienciaService,
     private activatedRouter: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.Experiencia.detail(id).subscribe(
+    this.experienciaService.detail(id).subscribe(
       (data) => {
         this.expLab = data;
       },
@@ -32,7 +32,7 @@ export class EditarExperienciaComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.Experiencia.update(id, this.expLab).subscribe(
+    this.experienciaService.update(id, this.expLab).subscribe(
       (data) => {
         this.router.navigate(['']);
       },

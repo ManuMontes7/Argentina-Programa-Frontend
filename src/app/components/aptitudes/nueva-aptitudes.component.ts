@@ -12,7 +12,9 @@ export class NuevaAptitudesComponent implements OnInit {
   nombre: string;
   porcentaje: number;
 
-  constructor(private aptitudS: AptitudesService, private router: Router) {}
+  constructor(
+    private aptitudS: AptitudesService, 
+    private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -20,7 +22,7 @@ export class NuevaAptitudesComponent implements OnInit {
     const aptitudes = new Aptitudes(this.nombre, this.porcentaje);
     this.aptitudS.save(aptitudes).subscribe(
       (data) => {
-        alert('Skill creada correctamente');
+        alert('Aptitud creada correctamente');
         this.router.navigate(['']);
       },
       (err) => {

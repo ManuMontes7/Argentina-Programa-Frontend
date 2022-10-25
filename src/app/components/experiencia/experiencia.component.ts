@@ -12,7 +12,7 @@ export class ExperienciaComponent implements OnInit {
   expe: Experiencia[] = [];
 
   constructor(
-    private Experiencia: ExperienciaService,
+    private experienciaService: ExperienciaService,
     private tokenService: TokenService
   ) {}
 
@@ -26,14 +26,14 @@ export class ExperienciaComponent implements OnInit {
   }
 
   cargarExperiencia(): void {
-    this.Experiencia.lista().subscribe((data) => {
+    this.experienciaService.lista().subscribe((data) => {
       this.expe = data;
     });
   }
 
   delete(id?: number) {
     if (id != undefined) {
-      this.Experiencia.delete(id).subscribe(
+      this.experienciaService.delete(id).subscribe(
         (data) => {
           this.cargarExperiencia();
         },

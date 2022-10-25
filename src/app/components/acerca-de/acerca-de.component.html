@@ -1,15 +1,15 @@
-<div class="row">
-    <button
-      type="button"
-      class="btn btn-primary"
-      routerLink="/editaracercade/1"
-      *ngIf="isLogged">
-      Editar
-    </button>
+<div class="row" *ngIf="persona">
+  <button
+    type="button"
+    class="btn btn-primary"
+    routerLink="/editaracercade/1"
+    *ngIf="isLogged"
+  >
+    Editar
+  </button>
 
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-
-    <img src={{ persona.img }} class="img-fluid" id="fotoPerfil" />
+    <img src="{{" persona.img }} class="img-fluid" id="fotoPerfil" />
   </div>
 
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">

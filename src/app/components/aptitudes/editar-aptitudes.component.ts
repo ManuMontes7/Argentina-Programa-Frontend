@@ -37,7 +37,7 @@ export class EditarAptitudesComponent implements OnInit {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al modificar la skill');
+        alert('Error al modificar la Aptitud');
         this.router.navigate(['']);
       }
     );
