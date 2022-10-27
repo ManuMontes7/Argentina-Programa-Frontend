@@ -21,14 +21,14 @@ export class NuevaAptitudesComponent implements OnInit {
   onCreate(): void {
     const aptitudes = new Aptitudes(this.nombre, this.porcentaje);
     this.aptitudS.save(aptitudes).subscribe(
-      (data) => {
-        alert('Aptitud creada correctamente');
+      data => {
+        alert("Aptitud creada correctamente");
         this.router.navigate(['']);
       },
-      (err) => {
-        alert('Fallo al añadir la skill');
+      err => {
+        alert("Fallo al añadir la skill");
         this.router.navigate(['']);
       }
-    );
+    )
   }
 }

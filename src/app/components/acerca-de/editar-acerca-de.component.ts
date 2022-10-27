@@ -22,28 +22,28 @@ export class EditarAcercaDeComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(
-      (data) => {
+      data => {
         this.persona = data;
       },
-      (err) => {
-        alert('Error al modificar');
+      err => {
+        alert("Error al modificar");
         this.router.navigate(['']);
       }
-    );
+    )
   }
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.persona.img = this.imageService.url;
+    this.persona.img = this.imageService.url
     this.personaService.update(id, this.persona).subscribe(
-      (data) => {
+      data => {
         this.router.navigate(['']);
       },
-      (err) => {
-        alert('Error al modificar la persona');
+      err => {
+        alert("Error al modificar la persona");
         this.router.navigate(['']);
       }
-    );
+    )
   }
 
   uploadImage($event:any){

@@ -13,35 +13,31 @@ export class AptitudesComponent implements OnInit {
 
   constructor(
     private aptitudS: AptitudesService,
-    private tokenService: TokenService
-  ) {}
+    private tokenService: TokenService) {}
   isLogged = false;
 
   ngOnInit(): void {
     this.cargarAptitudes();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
-    } else {
-      this.isLogged = false;
     }
   }
 
   cargarAptitudes(): void {
-    this.aptitudS.lista().subscribe((data) => {
-      this.aptitudes = data;
-    });
-  }
+    this.aptitudS.lista().subscribe(
+      data => {
+      this.aptitudes = data;})}
 
   delete(id: number) {
     if (id != undefined) {
       this.aptitudS.delete(id).subscribe(
-        (data) => {
+        data => {
           this.cargarAptitudes();
         },
-        (err) => {
+        err => {
           alert('No se pudo borrar la Aptitud');
         }
-      );
+      )
     }
   }
 }

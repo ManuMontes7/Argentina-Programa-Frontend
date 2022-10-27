@@ -20,26 +20,26 @@ export class EditarAptitudesComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.aptitudS.detail(id).subscribe(
-      (data) => {
+      data => {
         this.aptitudes = data;
       },
-      (err) => {
-        alert('Error al modificar');
+      err => {
+        alert("Error al modificar");
         this.router.navigate(['']);
       }
-    );
+    )
   }
 
   onUpdate() {
     const id = this.activatedRouter.snapshot.params['id'];
     this.aptitudS.update(id, this.aptitudes).subscribe(
-      (data) => {
+      data => {
         this.router.navigate(['']);
       },
-      (err) => {
-        alert('Error al modificar la Aptitud');
+      err => {
+        alert("Error al modificar la Aptitud");
         this.router.navigate(['']);
       }
-    );
+    )
   }
 }

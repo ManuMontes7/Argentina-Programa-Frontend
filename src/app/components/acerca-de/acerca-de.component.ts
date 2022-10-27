@@ -11,9 +11,11 @@ import { TokenService } from '../../service/token.service';
 export class AcercaDeComponent implements OnInit {
   persona: persona = null;
 
-  constructor(public personaService: PersonaService, 
-    private tokenService: TokenService) {}
-    isLogged = false;
+  constructor(
+    public personaService: PersonaService,
+    private tokenService: TokenService
+  ) {}
+  isLogged = false;
 
   ngOnInit(): void {
     this.cargarPersona();
@@ -22,8 +24,9 @@ export class AcercaDeComponent implements OnInit {
     }
   }
 
-  cargarPersona(){
-    this.personaService.detail(1).subscribe(data => 
-      {this.persona = data})
+  cargarPersona() {
+    this.personaService.detail(1).subscribe(data => {
+      this.persona = data;
+    })
   }
 }

@@ -25,21 +25,20 @@ export class EducacionComponent implements OnInit {
   }
 
   cargarEducacion(): void {
-    this.educacionS.lista().subscribe((data) => {
-      this.educacion = data;
-    });
-  }
+    this.educacionS.lista().subscribe(
+      data => {
+      this.educacion = data;})}
 
   delete(id?: number) {
     if (id != undefined) {
       this.educacionS.delete(id).subscribe(
-        (data) => {
+        data => {
           this.cargarEducacion();
         },
-        (err) => {
+        err => {
           alert('No se pudo eliminar');
         }
-      );
+      )
     }
   }
 }
