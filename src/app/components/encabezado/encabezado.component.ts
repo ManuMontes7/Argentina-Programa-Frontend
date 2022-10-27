@@ -5,7 +5,7 @@ import { TokenService } from '../../service/token.service';
 @Component({
   selector: 'app-encabezado',
   templateUrl: './encabezado.component.html',
-  styleUrls: ['./encabezado.component.css'],
+  styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
   isLogged = false;

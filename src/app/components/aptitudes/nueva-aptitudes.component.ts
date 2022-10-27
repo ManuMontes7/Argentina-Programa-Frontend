@@ -6,7 +6,7 @@ import { AptitudesService } from '../../service/aptitudes.service';
 @Component({
   selector: 'app-nueva-aptitudes',
   templateUrl: './nueva-aptitudes.component.html',
-  styleUrls: ['./nueva-aptitudes.component.css'],
+  styleUrls: ['./nueva-aptitudes.component.css']
 })
 export class NuevaAptitudesComponent implements OnInit {
   nombre: string;

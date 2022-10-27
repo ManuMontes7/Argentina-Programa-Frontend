@@ -6,7 +6,7 @@ import { AptitudesService } from '../../service/aptitudes.service';
 @Component({
   selector: 'app-editar-aptitudes',
   templateUrl: './editar-aptitudes.component.html',
-  styleUrls: ['./editar-aptitudes.component.css'],
+  styleUrls: ['./editar-aptitudes.component.css']
 })
 export class EditarAptitudesComponent implements OnInit {
   aptitudes: Aptitudes = null;

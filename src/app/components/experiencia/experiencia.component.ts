@@ -28,7 +28,8 @@ export class ExperienciaComponent implements OnInit {
   cargarExperiencia(): void {
     this.experienciaService.lista().subscribe(
       data => {
-      this.expe = data;})}
+      this.expe = data;})
+    }
 
   delete(id?: number) {
     if (id != undefined) {

@@ -28,6 +28,6 @@ export class AptitudesService {
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.skillURL + `delete/${id}`);
+    return this.httpClient.delete(this.skillURL + `delete/${id}`);
   }
 }

@@ -45,7 +45,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     EditarEducacionComponent,
     EditarAptitudesComponent,
     NuevaAptitudesComponent,
-    EditarAcercaDeComponent,
+    EditarAcercaDeComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +54,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AppRoutingModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage()),
+    provideStorage(() => getStorage())
   ],
   providers: [interceptorProvider],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
