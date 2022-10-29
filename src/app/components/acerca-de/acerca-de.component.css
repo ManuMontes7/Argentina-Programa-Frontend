@@ -3,7 +3,6 @@
 }
 
 div{
-
     text-align: center;
 }
 
@@ -15,7 +14,7 @@ div{
 
 @media(min-width:576px){
     #fotoPerfil{
-       border-radius:10%;
+       border-radius:30%;
        box-shadow:3px 3px 3px black;
     }
 
@@ -28,7 +27,6 @@ div{
 
 @media(max-width:575px){
     #fotoPerfil{
-       position:absolute;
        width:33%;
        border-radius:10%;
        box-shadow:3px 3px 3px black;

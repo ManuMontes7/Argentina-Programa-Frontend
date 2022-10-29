@@ -26,4 +26,8 @@ export class ImageService {
         console.log("La URL es: " + this.url);}})
     .catch(error => console.log(error))
   }
+
+  clearUrl() {
+    this.url = "";
+  }
 }

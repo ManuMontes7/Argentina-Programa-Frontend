@@ -1,21 +1,44 @@
-<div class="row">
-    <h1>Proyectos</h1>
-    <div class="container">
-        <div>
-            <h2>Proyecto 1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sunt, magnam officia fugit placeat pariatur adipisci
-                architecto impedit earum sint nostrum quasi alias
-                numquam labore optio amet quae nihil provident
-                recusandae.</p>
-        </div>
-        <div>
-            <h2>Proyecto 2</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sunt, magnam officia fugit placeat pariatur adipisci
-                architecto impedit earum sint nostrum quasi alias
-                numquam labore optio amet quae nihil provident
-                recusandae.</p>
-        </div>
-    </div>
+<div class="row" *ngIf="proyectos">
+  <div class="row">
+  <div class="col-8"><h1>Proyectos</h1></div>
+  <div class="col-4">
+    <button
+      type="button"
+      class="btn btn-dark"
+      routerLink="/nuevopro"
+      *ngIf="isLogged">
+      Agregar Proyecto
+    </button>
+  </div>
+  </div>
+  <br>
+  <div class="col-sm-11 col-md-11 col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let proyectos of proyectos">
+        <td>
+            <h2>{{proyectos?.nombrePro}}</h2>
+        </td>
+        <td>
+            {{proyectos?.descripcionPro}}
+        </td>
+          <td>
+            <img src={{proyectos?.img}} class="img-fluid">
+          </td>
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-light"
+              routerLink="/editarpro/{{proyectos?.id}}">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </td>
+          <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(proyectos.id)">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

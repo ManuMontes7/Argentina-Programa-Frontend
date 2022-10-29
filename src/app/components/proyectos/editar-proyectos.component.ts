@@ -1,47 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { persona } from '../../model/persona.model';
-import { PersonaService } from '../../service/persona.service';
 import { ImageService } from '../../service/image.service';
+import { Proyectos } from '../../model/proyectos';
+import { ProyectosService } from '../../service/proyectos.service';
 
 @Component({
-  selector: 'app-editar-acerca-de',
-  templateUrl: './editar-acerca-de.component.html',
-  styleUrls: ['./editar-acerca-de.component.css']
+  selector: 'app-editar-proyectos',
+  templateUrl: './editar-proyectos.component.html',
+  styleUrls: ['./editar-proyectos.component.css']
 })
-export class EditarAcercaDeComponent implements OnInit {
-  persona: persona = null;
+export class EditarProyectosComponent implements OnInit {
+  proyectos: Proyectos = null;
 
   constructor(
     private activatedRouter: ActivatedRoute,
-    private personaService: PersonaService,
+    private proyectosService: ProyectosService,
     private router: Router,
     public imageService: ImageService
   ) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.personaService.detail(id).subscribe(
+    this.proyectosService.detail(id).subscribe(
       data => {
-        this.persona = data;
+        this.proyectos = data;
       },
       err => {
         alert("Error al modificar");
         this.router.navigate(['']);
       }
     )
-    this.imageService.clearUrl();
   }
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.persona.img = this.imageService.url
-    this.personaService.update(id, this.persona).subscribe(
+    this.proyectos.img = this.imageService.url
+    this.proyectosService.update(id, this.proyectos).subscribe(
       data => {
         this.router.navigate(['']);
       },
       err => {
-        alert("Error al modificar la persona");
+        alert("Error al modificar el proyecto");
         this.router.navigate(['']);
       }
     )
@@ -49,7 +48,7 @@ export class EditarAcercaDeComponent implements OnInit {
 
   uploadImage($event:any){
     const id = this.activatedRouter.snapshot.params['id'];
-    const name = "perfil_" + id;
+    const name = "proyecto_" + id;
     this.imageService.uploadImage($event, name)
   }
 }

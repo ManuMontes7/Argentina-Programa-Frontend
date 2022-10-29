@@ -1,12 +1,12 @@
-<br>
+<div class="row" *ngIf="persona">
   <button
     type="button"
-    class="btn btn-primary"
+    class="btn btn-dark"
     routerLink="/editaracercade/1"
     *ngIf="isLogged">Editar Usuario
   </button>
-
-<div class="row" *ngIf="persona">
+  <br>
+  <br>
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
       <img src={{persona?.img}} class="img-fluid" id="fotoPerfil">
   </div>
