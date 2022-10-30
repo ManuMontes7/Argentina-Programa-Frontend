@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ImageService } from '../../service/image.service';
 import { Proyectos } from '../../model/proyectos';
 import { ProyectosService } from '../../service/proyectos.service';
@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
   templateUrl: './nuevo-proyectos.component.html',
   styleUrls: ['./nuevo-proyectos.component.css']
 })
+
 export class NuevoProyectosComponent  implements OnInit {
   nombrePro: string = '';
   descripcionPro: string = '';
@@ -18,7 +19,6 @@ export class NuevoProyectosComponent  implements OnInit {
   constructor(
     private proyectosService: ProyectosService,
     private router: Router,
-    private activatedRouter: ActivatedRoute,
     public imageService: ImageService,
     private tokenService: TokenService
   ) {}
@@ -33,8 +33,8 @@ export class NuevoProyectosComponent  implements OnInit {
   }
 
   onCreate(): void {
-    this.img = this.imageService.url;
-    const proyec = new Proyectos(this.nombrePro, this.descripcionPro, this.img);
+    const proyec = new Proyectos(this.nombrePro, this.descripcionPro, this.img); 
+    proyec.img = this.imageService.url
     this.proyectosService.save(proyec).subscribe(
       data => {
         alert("Proyecto añadido");
@@ -48,8 +48,9 @@ export class NuevoProyectosComponent  implements OnInit {
   }
 
   uploadImage($event:any){
-    const id = this.activatedRouter.snapshot.params['id'];
-    const name = "proyecto_" + id;
+    const archivo = $event.target.files[0].name;
+    const name = "proyecto_" + archivo + "1";
     this.imageService.uploadImage($event, name)
   }
+  
 }

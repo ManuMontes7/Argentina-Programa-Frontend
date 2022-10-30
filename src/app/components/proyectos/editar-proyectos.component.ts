@@ -20,6 +20,7 @@ export class EditarProyectosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.imageService.clearUrl();
     const id = this.activatedRouter.snapshot.params['id'];
     this.proyectosService.detail(id).subscribe(
       data => {
@@ -47,8 +48,8 @@ export class EditarProyectosComponent implements OnInit {
   }
 
   uploadImage($event:any){
-    const id = this.activatedRouter.snapshot.params['id'];
-    const name = "proyecto_" + id;
+    const archivo = $event.target.files[0].name;
+    const name = "proyecto_" + archivo + "1";
     this.imageService.uploadImage($event, name)
   }
 }

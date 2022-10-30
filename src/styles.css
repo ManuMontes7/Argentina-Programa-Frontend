@@ -10,7 +10,8 @@
     padding: 0;
 }
 body{
-    font-family: sans-serif;    
+    font-family: sans-serif;
+    background-color: #56bcd6 !important;
 }
 
 .container{
@@ -47,6 +48,10 @@ body{
     width: 100%;
 }
 
+.btn-dark {
+    float: right;
+}
+
 .form-control {
     margin: 20px 0;
 }
@@ -76,8 +81,4 @@ body{
 .form-control-check input {
     flex: 2;
     height: 20px;
-}
-
-div{
-    background-color: #56bcd6;
 }

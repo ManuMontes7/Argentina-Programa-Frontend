@@ -10,3 +10,20 @@
 h1, h3{
     display: inline;
 }
+
+@media(min-width:576px){
+    #fotoProyecto{
+       border-radius:30%;
+       box-shadow:3px 3px 3px black;
+    }
+}
+
+@media(max-width:575px){
+    #fotoProyecto{
+       width:33%;
+       border-radius:10%;
+       box-shadow:3px 3px 3px black;
+       left: 33%;
+       top: 633px;
+    }
+}

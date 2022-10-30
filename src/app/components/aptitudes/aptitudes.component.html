@@ -1,15 +1,22 @@
-<div class="row">
-
-  <h1>Hard & Soft skills</h1>
-  <button type="button" routerLink="/nuevaaptitudes" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
-
+<div class="row g-0">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-11"><h1>Hard & Soft skills</h1></div>
+    <div class="col-lg-4 col-md-4 col-sm-11">
+      <button 
+      type="button" 
+      routerLink="/nuevaaptitudes" 
+      class="btn btn-dark" 
+      *ngIf="isLogged">
+      Nueva Skill
+      </button>
+    </div>
   <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let aptitudes of aptitudes">
     <circle-progress 
     [percent]="(aptitudes.porcentaje)" 
     [radius]="90" 
     [imageSrc]="''" 
     [title]="(aptitudes.nombre)"
-    [titleColor]="'#212F3C'"
+    [titleColor]="'#651616'"
     [showTitle]="true" 
     [showImage]="false" 
     [imageHeight]="70" 
@@ -18,12 +25,11 @@
     [showSubtitle]="false" 
     [outerStrokeWidth]="16" 
     [innerStrokeWidth]="2" 
-    [outerStrokeColor]="'#78C000'"
-    [innerStrokeColor]="'#C7E596'" 
+    [outerStrokeColor]="'#55d12a'"
+    [innerStrokeColor]="'#347935'" 
     [animation]="true" 
     [animationDuration]="600">
     </circle-progress>
-
       <div>
           <td *ngIf="isLogged">
               <button class="btn btn-light" routerLink="/editaraptitudes/{{aptitudes.id}}">
@@ -34,6 +40,6 @@
                   <i class="bi bi-trash-fill"></i></button>
           </td>
       </div>
-      
+    </div>
   </div>
 </div>

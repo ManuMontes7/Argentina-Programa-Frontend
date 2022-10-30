@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Storage, ref, uploadBytes, list, getDownloadURL} from '@angular/fire/storage';
+import { Storage, ref, uploadBytes, list, getDownloadURL } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
   url: string = "";
+  urlFirebase: string = "";
+  bucle: any;
+  ruta: any;
 
   constructor(private storage: Storage) {}
 
@@ -15,15 +18,23 @@ export class ImageService {
     uploadBytes(imgRef, file)
       .then(response => {this.getImages()})
       .catch(error => console.log(error))
+      return this.ruta = imgRef.fullPath;
   }
+  
 
   getImages() {
     const imagesRef = ref(this.storage, 'imagen')
     list(imagesRef)
     .then(async response => {
       for (let item of response.items) {
-        this.url = await getDownloadURL(item);
-        console.log("La URL es: " + this.url);}})
+        this.urlFirebase = await getDownloadURL(item);
+        this.bucle = item;
+        const bucleString = this.bucle.toString().replace("gs://portfolioargprograma-9af25.appspot.com/", "");
+        if (bucleString == this.ruta){
+          this.url = this.urlFirebase;
+        }    
+      }}
+        )
     .catch(error => console.log(error))
   }
 

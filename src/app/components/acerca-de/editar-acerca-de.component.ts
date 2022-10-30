@@ -20,6 +20,7 @@ export class EditarAcercaDeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.imageService.clearUrl();
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(
       data => {
@@ -30,7 +31,6 @@ export class EditarAcercaDeComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
-    this.imageService.clearUrl();
   }
 
   onUpdate(): void {
@@ -48,8 +48,7 @@ export class EditarAcercaDeComponent implements OnInit {
   }
 
   uploadImage($event:any){
-    const id = this.activatedRouter.snapshot.params['id'];
-    const name = "perfil_" + id;
+    const name = "perfil";
     this.imageService.uploadImage($event, name)
   }
 }

@@ -1,7 +1,7 @@
-<div class="row" *ngIf="proyectos">
+<div class="row g-0" *ngIf="proyectos">
   <div class="row">
-  <div class="col-8"><h1>Proyectos</h1></div>
-  <div class="col-4">
+    <div class="col-lg-8 col-md-8 col-sm-11"><h1>Proyectos</h1></div>
+    <div class="col-lg-4 col-md-4 col-sm-11">
     <button
       type="button"
       class="btn btn-dark"
@@ -10,21 +10,13 @@
       Agregar Proyecto
     </button>
   </div>
-  </div>
-  <br>
   <div class="col-sm-11 col-md-11 col-lg-11">
     <table class="table">
       <tbody>
         <tr *ngFor="let proyectos of proyectos">
-        <td>
-            <h2>{{proyectos?.nombrePro}}</h2>
-        </td>
-        <td>
-            {{proyectos?.descripcionPro}}
-        </td>
-          <td>
-            <img src={{proyectos?.img}} class="img-fluid">
-          </td>
+          <td><h2>{{proyectos?.nombrePro}}</h2></td>
+          <td>{{proyectos?.descripcionPro}}</td>
+          <td><img src={{proyectos?.img}} class="img-fluid" id="fotoProyectos"></td>
           <td *ngIf="isLogged">
             <button
               class="btn btn-light"
@@ -41,4 +33,5 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>

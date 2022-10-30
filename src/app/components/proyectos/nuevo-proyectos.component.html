@@ -1,5 +1,6 @@
+<app-encabezado></app-encabezado>
 <div class="container">
-    <div class="row">
+    <div class="row g-0">
       <div>
         <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
           <div class="form-group">
@@ -30,13 +31,13 @@
               class="form-control"
               id="img"
               name="img"
-              [(ngModel)]="img"
               (change)="uploadImage($event)"
               accept=".jpg, .jpeg, .png">
           </div>
   
-          <div class="imagen">
+          <div class="imagen" *ngIf='imageService.url != ""'>
             <img [src]="imageService.url" width="200px">
+            <p>Imagen Cargada</p>
           </div>
   
           <br>
@@ -45,3 +46,4 @@
       </div>
     </div>
   </div>
+  <app-footer></app-footer>

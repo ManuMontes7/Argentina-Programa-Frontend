@@ -1,6 +1,7 @@
-<div class="row">
-  <h1>Educacion</h1>
-  <div class="col-lg-2">
+<div class="row g-0">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-11"><h1>Educacion</h1></div>
+    <div class="col-lg-4 col-md-4 col-sm-11">
     <button
       type="button"
       class="btn btn-dark"
@@ -13,9 +14,7 @@
     <table class="table">
       <tbody>
         <tr *ngFor="let Educacion of educacion">
-          <td>
-            <h2>{{ Educacion.nombreEdu }}</h2>
-          </td>
+          <td><h2>{{ Educacion.nombreEdu }}</h2></td>
           <td>{{ Educacion.descripcionEdu }}</td>
           <td *ngIf="isLogged">
             <button
@@ -30,5 +29,6 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
 </div>

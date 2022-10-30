@@ -3,7 +3,6 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee;
 }
 
 .h-custom {
@@ -14,4 +13,8 @@
   .h-custom {
     height: 100%;
   }
+}
+
+body{  
+    background-color: #56bcd6;
 }

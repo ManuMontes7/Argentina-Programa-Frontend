@@ -1,5 +1,6 @@
+<app-encabezado></app-encabezado>
 <div class="container" *ngIf="aptitudes">
-    <div class="row">
+    <div class="row g-0">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
@@ -17,3 +18,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>
