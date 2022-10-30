@@ -34,3 +34,9 @@ div{
        top: 633px;
     }
 }
+
+#banner img {
+    width: 100%;
+    display: flex;
+    box-shadow:3px 3px 3px black;
+  }

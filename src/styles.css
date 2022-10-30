@@ -11,6 +11,7 @@
 }
 body{
     font-family: sans-serif;
+    height: 100%;
     background-color: #56bcd6 !important;
 }
 
@@ -22,6 +23,11 @@ body{
     border: 1px solid steelblue;
     padding: 30px;
     border-radius: 5px;
+    background-color: #b4d0ee !important;
+}
+
+#content {
+    padding-bottom: 81px !important;
 }
 
 .btn {
