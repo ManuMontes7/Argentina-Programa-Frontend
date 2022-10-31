@@ -15,7 +15,7 @@
     <table class="table">
       <tbody>
         <tr *ngFor="let proyectos of proyectos">
-          <td><h2>{{proyectos?.nombrePro}}</h2></td>
+          <td><h3>{{proyectos?.nombrePro}}</h3></td>
           <td>{{proyectos?.descripcionPro}}</td>
           <td><img src={{proyectos?.img}} class="img-fluid" id="fotoProyectos"></td>
           <td *ngIf="isLogged">

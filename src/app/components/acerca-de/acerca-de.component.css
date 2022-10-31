@@ -36,7 +36,6 @@ div{
 }
 
 #banner img {
-    width: 100%;
-    display: flex;
+    width: 97%;
     box-shadow:3px 3px 3px black;
   }
